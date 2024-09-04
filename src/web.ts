@@ -1,13 +1,52 @@
 import { WebPlugin } from '@capacitor/core';
 
-import type { CapacitorAndroidPlayerPlugin } from './definitions';
+import type {
+  CapacitorAndroidPlayerPlugin,
+  capVideoPlayerOptions,
+  capVideoPlayerResult,
+} from './definitions';
 
 export class CapacitorAndroidPlayerWeb
   extends WebPlugin
   implements CapacitorAndroidPlayerPlugin
 {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  playerStop(): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  initPlayer(options: capVideoPlayerOptions): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
+  }
+
+  isPlaying(): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
+  }
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  setVideoUrl(options: { url: string }): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
+  }
+
+  playerPause(): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
+  }
+
+  exitPlayer(): Promise<capVideoPlayerResult> {
+    return new Promise(resolve => {
+      resolve({ result: true });
+    });
   }
 }
